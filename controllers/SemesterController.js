@@ -10,9 +10,9 @@ module.exports = async function (req, res) {
             semester = await knex("semesters").where('id', req.params.id).first();
             req.body.marks.map(marks => {
                 if (marks.id)
-                    await knex("marks").where('id', marks.id).update(marks)
+                    knex("marks").where('id', marks.id).update(marks)
                 else
-                    await knex("marks").insert(marks)
+                    knex("marks").insert(marks)
             });
             semester.marks = await knex("marks").where('semester_id', req.params.id).first();
             return res.json(semester);

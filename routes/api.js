@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const LoginController = require('./../controllers/LoginController');
+const LoginController = require('./../controllers/LoginConroller');
 const RegisterController = require('./../controllers/RegisterController');
 const SemesterController = require('./../controllers/SemesterController');
 const SemesterDownloadController = require('./../controllers/SemesterDownloadController');
