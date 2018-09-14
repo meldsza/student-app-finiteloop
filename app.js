@@ -9,7 +9,7 @@ app.use(express.static('public'))
 app.use(bodyParser.json())
 app.use(jwt.middleware.unless({ path: ['/login', '/', '/register'] }));
 
-app.use(router);
+app.use('/api', router);
 
 app.use(function (req, res, next) {
     res.status(404).jsonp({ "error": "404" });
