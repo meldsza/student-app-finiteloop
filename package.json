@@ -1,0 +1,28 @@
+{
+  "name": "student-app-finiteloop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meldsza/student-app-finiteloop.git"
+  },
+  "author": "Melroy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meldsza/student-app-finiteloop/issues"
+  },
+  "homepage": "https://github.com/meldsza/student-app-finiteloop#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-jwt": "^5.3.1",
+    "knex": "^0.15.2",
+    "mysql2": "^1.6.1"
+  }
+}
