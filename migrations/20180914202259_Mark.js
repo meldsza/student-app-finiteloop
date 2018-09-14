@@ -2,7 +2,7 @@
 exports.up = function (knex, Promise) {
     return knex.schema.createTable('marks', function (t) {
         t.increments('id').unsigned().primary();
-        t.string('subject').notNull();
+        t.string('subject', 30).notNull();
         t.integer('semester_id').unsigned().notNull();
         t.float('task1').unsigned().nullable();
         t.float('task2').unsigned().nullable();

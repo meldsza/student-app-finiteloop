@@ -2,9 +2,11 @@ const express = require('express')
 const app = express()
 const jwt = require('./middleware/jwt')
 const router = require('./routes/api');
+const bodyParser = require('body-parser');
 
 
 app.use(express.static('public'))
+app.use(bodyParser.json())
 app.use(jwt.middleware.unless({ path: ['/login', '/', '/register'] }));
 
 app.use(router);
