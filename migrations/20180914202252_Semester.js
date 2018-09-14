@@ -4,7 +4,7 @@ exports.up = function (knex, Promise) {
         t.increments('id').unsigned().primary();
         t.string('name', 30).notNull();
         t.float('sgpa').unsigned().default(0.0);
-        t.integer('student_id').unsigned().nullable();
+        t.integer('user_id').unsigned().nullable();
     });
 };
 
