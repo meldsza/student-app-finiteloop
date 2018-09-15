@@ -1,13 +1,14 @@
 const getToken = () => localStorage.getItem("token");
 const setToken = (token) => localStorage.setItem("token", token);
 let user = false;
-var bodycontrol = new Vue({
-    el: '#body'
-})
 
-let showLogin = function () {
 
-    Vue.component('loginPage', {
+
+
+
+let LoginForm = 
+
+ {
         template: `<div id="login" v-cloak>
         <div class="container">
           <h1 class="text-center">Sign in to your account</h1>
@@ -33,9 +34,26 @@ let showLogin = function () {
           </div>
         </div>
       </div>`
-    })
-}
 
+}
+const routes = [
+  { path: '/login', component: LoginForm },
+  { path: '/register', component: RegisterForm }
+]
+
+// 3. Create the router instance and pass the `routes` option
+// You can pass in additional options here, but let's
+// keep it simple for now.
+const router = new VueRouter({
+  routes // short for `routes: routes`
+})
+
+// 4. Create and mount the root instance.
+// Make sure to inject the router with the router option to make the
+// whole app router-aware.
+const app = new Vue({
+  router
+}).$mount('#app')
 if (getToken() && getToken() != "") {
     Vue.http.headers.common['Authorization'] = `Bearer ${getToken()}`;
     this.$http.get('/api/me').then(response => {
